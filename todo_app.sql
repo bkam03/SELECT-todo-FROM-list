@@ -63,5 +63,11 @@ SELECT title, description FROM tasks WHERE completed_at IS NULL;
 
 SELECT * FROM tasks ORDER BY created_at DESC;
 
---SELECT * FROM tasks;
+INSERT INTO tasks( title, description )
+  values( 'mistake 1', 'a test entry' );
+
+
+
+
+SELECT * FROM tasks;
 \c bk;
