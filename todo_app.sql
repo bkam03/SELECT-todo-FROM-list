@@ -28,7 +28,20 @@ CREATE TABLE tasks (
 );
 
 /*
-8
+8remove the column named completed
+add a column to tasks named completed_at:timestamp, that may be NULL, and has a default value of NULL.
+change the updated_at column to not allow NULL values, and have a default value of now()
+create a new task, by only setting values (not defining which columns) id = default value
+title = 'Study SQL'
+description = 'Complete this exercise'
+created_at = now()
+updated_at = now()
+completed_at = NULL
+13
 */
+ALTER TABLE tasks DROP COLUMN completed;
 
+
+
+SELECT * FROM tasks;
 \c bk;
