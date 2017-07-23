@@ -72,7 +72,7 @@ INSERT INTO tasks( title, description )
 INSERT INTO tasks( title, description )
   values( 'mistake 3', 'another test entry' );
 
+SELECT title FROM tasks WHERE title LIKE '%mistake%';
 
-
-SELECT * FROM tasks;
+--SELECT * FROM tasks;
 \c bk;
