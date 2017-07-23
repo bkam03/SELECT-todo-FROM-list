@@ -14,7 +14,7 @@ CREATE DATABASE todo_app;
 \c todo_app;
 
 CREATE TABLE tasks (
-  id INT NOT NULL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   description TEXT DEFAULT NULL,
   created_at TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
@@ -43,7 +43,21 @@ ALTER TABLE tasks ADD COLUMN completed_at TIMESTAMP without time zone DEFAULT NU
 ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
 ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
 
-INSERT INTO tasks values( default, 'Study SQL', 'Complete this exercise', NOW(), NOW(), NULL);
+INSERT INTO tasks values(
+  DEFAULT,
+  'Study SQL',
+  'Complete this exercise',
+  NOW(),
+  NOW(),
+  NULL
+);
 
-SELECT * FROM tasks;
+INSERT INTO tasks ( title, description )
+  values( 'Study PostgreSQL', 'Read all the documentation' );
+
+
+
+
+
+--SELECT * FROM tasks;
 \c bk;
