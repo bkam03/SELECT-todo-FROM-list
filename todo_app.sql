@@ -69,6 +69,8 @@ INSERT INTO tasks( title, description )
 INSERT INTO tasks( title, description )
   values( 'mistake 2', 'another test entry' );
 
+INSERT INTO tasks( title, description )
+  values( 'mistake 3', 'another test entry' );
 
 
 
