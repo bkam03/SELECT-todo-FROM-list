@@ -1,10 +1,3 @@
-/*
-Write a query to delete a user named michael if it exists
-Write a query to create a user named michael with an encrypted password stonebreaker
-Write a query to drop a database named todo_app if it exists
-Write a query to create a database named todo_app
-*/
-
 DROP USER IF EXISTS michael;
 CREATE USER michael WITH ENCRYPTED PASSWORD 'stonebreaker';
 
@@ -22,20 +15,7 @@ CREATE TABLE tasks (
   completed BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-/*
-8remove the column named completed
 
-add a column to tasks named completed_at:timestamp, that may be NULL, and has a default value of NULL.
-
-change the updated_at column to not allow NULL values, and have a default value of now()
-create a new task, by only setting values (not defining which columns) id = default value
-title = 'Study SQL'
-description = 'Complete this exercise'
-created_at = now()
-updated_at = now()
-completed_at = NULL
-13
-*/
 ALTER TABLE tasks DROP COLUMN completed;
 
 ALTER TABLE tasks ADD COLUMN completed_at TIMESTAMP without time zone DEFAULT NULL;
@@ -80,6 +60,6 @@ SELECT title, description FROM tasks WHERE title LIKE '%mistake%';
 
 DELETE FROM tasks WHERE title LIKE '%mistake%';
 
+SELECT * FROM tasks ORDER BY title ASC;
 
-SELECT * FROM tasks;
 \c bk;
