@@ -11,15 +11,10 @@ CREATE USER michael WITH ENCRYPTED PASSWORD 'stonebreaker';
 DROP DATABASE IF EXISTS todo_app;
 CREATE DATABASE todo_app;
 
-/*
-Connect to the newly created database
-Write a query to create a table named tasks using the Initial columns detailed below
-Define column id as the table's primary key
-*/
 \c todo_app;
 
 CREATE TABLE tasks (
-  id SERIAL NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   description TEXT DEFAULT NULL,
   created_at TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
@@ -45,6 +40,10 @@ ALTER TABLE tasks DROP COLUMN completed;
 
 ALTER TABLE tasks ADD COLUMN completed_at TIMESTAMP without time zone DEFAULT NULL;
 
+ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
+ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
+
+INSERT INTO tasks values( default, 'Study SQL', 'Complete this exercise', NOW(), NOW(), NULL);
 
 SELECT * FROM tasks;
 \c bk;
