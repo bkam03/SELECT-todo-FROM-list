@@ -66,6 +66,9 @@ SELECT * FROM tasks ORDER BY created_at DESC;
 INSERT INTO tasks( title, description )
   values( 'mistake 1', 'a test entry' );
 
+INSERT INTO tasks( title, description )
+  values( 'mistake 2', 'another test entry' );
+
 
 
 
