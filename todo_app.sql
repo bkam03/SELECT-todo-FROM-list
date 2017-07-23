@@ -74,5 +74,7 @@ INSERT INTO tasks( title, description )
 
 SELECT title FROM tasks WHERE title LIKE '%mistake%';
 
---SELECT * FROM tasks;
+DELETE FROM tasks WHERE title = 'mistake 1';
+
+SELECT * FROM tasks;
 \c bk;
