@@ -29,7 +29,9 @@ CREATE TABLE tasks (
 
 /*
 8remove the column named completed
+
 add a column to tasks named completed_at:timestamp, that may be NULL, and has a default value of NULL.
+
 change the updated_at column to not allow NULL values, and have a default value of now()
 create a new task, by only setting values (not defining which columns) id = default value
 title = 'Study SQL'
@@ -41,6 +43,7 @@ completed_at = NULL
 */
 ALTER TABLE tasks DROP COLUMN completed;
 
+ALTER TABLE tasks ADD COLUMN completed_at TIMESTAMP without time zone DEFAULT NULL;
 
 
 SELECT * FROM tasks;
