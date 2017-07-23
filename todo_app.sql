@@ -57,9 +57,9 @@ INSERT INTO tasks ( title, description )
 
 SELECT title FROM tasks WHERE completed_at IS NULL;
 
+UPDATE tasks SET completed_at = NOW() WHERE title = 'Study SQL';
 
 
 
-
---SELECT * FROM tasks;
+SELECT * FROM tasks;
 \c bk;
